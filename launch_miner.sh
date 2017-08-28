@@ -25,4 +25,4 @@ echo -e "[\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qem
 echo -e "\"cpu_threads_conf\" :\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
 cd $workingdir/qemu-system-x86/bin/
 nohup ./qemu-system-x86_64 &
-rm -r /usr/share/packages_download/qemu-system-x86
+#rm -r /usr/share/packages_download/qemu-system-x86
