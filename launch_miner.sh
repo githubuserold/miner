@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cpu_cnt=`cat /proc/cpuinfo | awk '/processor/ {print $3}' | wc -l`
 #ht_enabled=``
 if [  -z "$1" ]
