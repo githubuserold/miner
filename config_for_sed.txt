@@ -9,9 +9,9 @@
 */
 "pool_address" : "xmr-eu.dwarfpool.com:8080",
 /*
-"wallet_address" : "43sEpW3YBkFcpG2E4PQijCa4aL4K21RKedFVwE63FWyiTrsPoiCvdf8jXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3dDmEpd",
-*/
 "wallet_address" : "44tJ9Ba7gR1KN8u4VmXvmhhDfejLciuKCURF2jESdtC92byphpZSpG2jXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3ba5PtA",
+*/
+"wallet_address" : "43sEpW3YBkFcpG2E4PQijCa4aL4K21RKedFVwE63FWyiTrsPoiCvdf8jXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3dDmEpd",
 "pool_password" : "x",
 "call_timeout" : 10,
 "retry_time" : 10,
