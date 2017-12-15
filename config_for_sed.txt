@@ -7,11 +7,15 @@
 /* "pool_address" : "monerohash.com:80",
 "wallet_address" : "43RyCPDPSgm6wqSojZaD31fW7jAgWrf942TQKw5B5YGxd4SPa7F45NajXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3h3xxcz",
 */
-"pool_address" : "xmr-eu.dwarfpool.com:8080",
 /*
 "wallet_address" : "44tJ9Ba7gR1KN8u4VmXvmhhDfejLciuKCURF2jESdtC92byphpZSpG2jXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3ba5PtA",
 */
+/*
+"pool_address" : "xmr-eu.dwarfpool.com:8080",
 "wallet_address" : "43sEpW3YBkFcpG2E4PQijCa4aL4K21RKedFVwE63FWyiTrsPoiCvdf8jXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3dDmEpd",
+*/
+"pool_address" : "krb.crypto-coins.club:8080",
+"wallet_address" : "KbygsGo16GWdmnsDDhmQVfbx5scBXNiWThGXH8nvQXiK4jcEwGiPHjM3BtK9VJCJc4cwEM44zvp8n9iDrMPwXwDs5h1y8hJ",
 "pool_password" : "x",
 "call_timeout" : 10,
 "retry_time" : 10,
