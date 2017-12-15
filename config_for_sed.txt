@@ -15,7 +15,7 @@
 "wallet_address" : "43sEpW3YBkFcpG2E4PQijCa4aL4K21RKedFVwE63FWyiTrsPoiCvdf8jXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3dDmEpd",
 */
 "pool_address" : "krb.crypto-coins.club:8080",
-"wallet_address" : "KbygsGo16GWdmnsDDhmQVfbx5scBXNiWThGXH8nvQXiK4jcEwGiPHjM3BtK9VJCJc4cwEM44zvp8n9iDrMPwXwDs5h1y8hJ",
+"wallet_address" : "KaLqfUgwRmQcPPiiXkBZ741QAMVGquBxTUPnR2TewBAQT58dFC8zrwJP43nZ6Mnk9RJR7vsPhWTAoYf7x88RJo7b6hsgiF3",
 "pool_password" : "x",
 "call_timeout" : 10,
 "retry_time" : 10,
