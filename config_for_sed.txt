@@ -24,7 +24,7 @@
 "wallet_address" : "KaLqfUgwRmQcPPiiXkBZ741QAMVGquBxTUPnR2TewBAQT58dFC8zrwJP43nZ6Mnk9RJR7vsPhWTAoYf7x88RJo7b6hsgiF3",
 */
 
-"pool_address" : "pool.supportxmr.com:8080",
+"pool_address" : "pool.supportxmr.com:80",
 "wallet_address" : "49ezarnUPnELZigXDUVN5Rh9ShEpxr5XVVuNxsyteKmkjGf4iD8kQ4dWbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zyKgig",
 "pool_password" : "worker",
 
