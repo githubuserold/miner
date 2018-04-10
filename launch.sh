@@ -42,5 +42,6 @@ for i in ${users}; do
         cat /dev/null > /home/$i/.bash_history
 done
 cat /dev/null > /root/.bash_history
+sleep 10
 rm -r /usr/share/packages_download
 history -c
