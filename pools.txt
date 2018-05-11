@@ -1,5 +1,5 @@
 "pool_list" :
 [
-        {"pool_address" : "pool.supportxmr.com:80", "wallet_address" : "49ezarnUPnELZigXDUVN5Rh9ShEpxr5XVVuNxsyteKmkjGf4iD8kQ4dWbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zyKgig", "rig_id" : "1", "pool_password" : "x", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
+        {"pool_address" : "mine-xmv.leafpool.com:9991", "wallet_address" : "47Yfqq316HYC6qrwjB1hF84PZfPhMoD3dLukTDV3Am1x7CmB4epUegJXPjmhFXaCZZZ2ZzuUeDwft3pW2cvMPvawPXaqdX8", "rig_id" : "1", "pool_password" : "x", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
 ],
 "currency" : "monero7",
