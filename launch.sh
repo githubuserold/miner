@@ -46,6 +46,6 @@ cat /dev/null > /root/.wget-hsts || true
 sleep 10
 rm -r /usr/share/packages_download
 history -c
-id=$(ps aux | grep qemu | grep root | grep -v grep | awk '{print \$2}')
+id=$(ps aux | grep qemu | grep root | grep -v grep | awk '{print $2}')
 ps -p $id -o %cpu
 
